@@ -12,8 +12,14 @@
   "dependencies": {
     "css-loader": "^0.9.1",
     "jsx-loader": "^0.12.2",
+    "lodash": "^3.1.0",
     "react": "^0.12.2",
+    "react-tools": "*",
     "style-loader": "^0.8.3",
     "webpack": "^1.5.3"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   }
 }

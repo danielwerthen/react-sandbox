@@ -19,5 +19,5 @@ app.set('port', process.env.PORT || 3000);
 
 
 app.listen(app.get('port'), function () {
-  console.log('Server running at localhost:' + this.address().port);
+  console.log('The main server is running at http://localhost:' + this.address().port);
 });

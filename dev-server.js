@@ -15,5 +15,5 @@ new WebpackDevServer(webpack(config), {
     console.log(err);
   }
 
-  console.log('Listening at localhost:3001');
+  console.log('The webpack-dev-server is running at http://localhost:3001');
 });

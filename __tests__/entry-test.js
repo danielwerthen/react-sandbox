@@ -6,16 +6,12 @@ jest.dontMock('../entry.js');
 describe('CheckboxWithLabel', function() {
   it('changes the text after click', function() {
     var React = require('react/addons');
-    var Entry = require('../entry.js');
+    var Entry = require('../entry');
     var TestUtils = React.addons.TestUtils;
 
-    // Render a checkbox with label in the document
-    var rendered = TestUtils.renderIntoDocument(
-      <Entry />
-    );
+    var rend = TestUtils.renderIntoDocument(<Entry />);
+    expect(rend).toBeDefined();
 
-    expect(rendered).toBeDefined();
-    expect(1).toEqual(2);
 
   });
 });

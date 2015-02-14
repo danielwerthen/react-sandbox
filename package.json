@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server webpack/hot/dev-server ./entry --hot"
+    "start": "webpack-dev-server webpack/hot/dev-server ./src/app --hot"
   },
   "author": "",
   "license": "MIT",
@@ -19,20 +19,16 @@
     "webpack": "^1.5.3"
   },
   "jest": {
-    "rootDir": "./",
-    "testDirectoryName": "test-dist",
+    "rootDir": "test-build",
+    "testDirectoryName": "__tests__",
     "unmockedModulePathPatterns": [
       "react"
     ]
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-jest": "^0.3.0",
-    "gulp-jsx": "^0.7.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-tap": "^0.1.3",
-    "gulp-webpack": "^1.2.0",
-    "jest-cli": "^0.2.2",
-    "vinyl-named": "^1.1.0"
+    "gulp-react": "^2.0.0",
+    "gulp-strip-code": "^0.1.2",
+    "jest-cli": "^0.2.2"
   }
 }

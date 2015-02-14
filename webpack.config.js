@@ -1,12 +1,12 @@
 module.exports = {
-  entry: './src/entry.js',
+  entry: './src/app.js',
   output: {
     filename: 'bundle.js'       
   },
   devtool: "inline-source-map",
   module: {
     loaders: [
-      //{ test: /\.coffee$/, loader: 'coffee-loader' },
+      { test: /\.coffee$/, loader: 'coffee-loader' },
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.js$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
     ]

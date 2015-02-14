@@ -30,4 +30,4 @@ node_modules
 *.swp
 node_modules/
 npm-debug.log
-test-dist/
+test-build/

@@ -1,5 +1,5 @@
 /* start-webpack-block */
-require('./css/style.css');
+require('./less/style');
 /* end-webpack-block */
 
 var React = require('react'),

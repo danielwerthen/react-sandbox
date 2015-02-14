@@ -11,12 +11,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.1.0",
-    "react": "^0.12.2",
-    "react-tools": "*",
     "coffee-loader": "^0.7.2",
     "css-loader": "^0.9.1",
     "jsx-loader": "^0.12.2",
+    "less": "^2.4.0",
+    "less-loader": "^2.0.0",
+    "lodash": "^3.1.0",
+    "react": "^0.12.2",
+    "react-tools": "*",
     "style-loader": "^0.8.3",
     "webpack": "^1.5.3"
   },

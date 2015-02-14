@@ -7,12 +7,12 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.coffee$/, loader: 'coffee-loader' },
-      { test: /\.css$/, loader: 'style!css' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       { test: /\.js$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
     ]
   },
   resolve: {
     // you can now require('file') instead of require('file.coffee')
-    extensions: ['', '.js', '.json', '.coffee'] 
+    extensions: ['', '.js', '.json', '.coffee', '.less'] 
   }
 };

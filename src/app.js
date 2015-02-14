@@ -6,8 +6,7 @@ require('./less/style');
 
 var React = require('react'),
     Router = require('react-router'),
-    routes = require('./routes'),
-    Component = require('./component');
+    routes = require('./routes');
 
 
 Router.run(routes, Router.HistoryLocation, function (Handler, state) {

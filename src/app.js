@@ -5,7 +5,11 @@ require('./less/style');
 /* end-webpack-block */
 
 var React = require('react'),
+    Router = require('react-router'),
+    routes = require('./routes'),
     Component = require('./component');
 
 
-React.render(<Component />, document.body);
+Router.run(routes, Router.HistoryLocation, function (Handler, state) {
+  React.render(<Handler params={state.params}/>, document.body);
+});

@@ -22,9 +22,20 @@
     "lodash": "^3.1.0",
     "node-jsx": "^0.12.4",
     "react": "^0.12.2",
+    "react-router": "^0.12.0",
     "react-tools": "*",
     "style-loader": "^0.8.3",
-    "webpack": "^1.5.3"
+
+
+    "webpack": "^1.5.3",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-react": "^2.0.0",
+    "gulp-strip-code": "^0.1.2",
+    "jest-cli": "^0.2.2",
+    "nodemon": "^1.3.7",
+    "react-hot-loader": "^1.1.5",
+    "webpack-dev-server": "^1.7.0"
   },
   "jest": {
     "rootDir": "test-build",
@@ -34,13 +45,5 @@
     ]
   },
   "devDependencies": {
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-react": "^2.0.0",
-    "gulp-strip-code": "^0.1.2",
-    "jest-cli": "^0.2.2",
-    "nodemon": "^1.3.7",
-    "react-hot-loader": "^1.1.5",
-    "webpack-dev-server": "^1.7.0"
   }
 }

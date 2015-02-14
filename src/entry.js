@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 require("./style.css");
 
 var React = require('react/addons');

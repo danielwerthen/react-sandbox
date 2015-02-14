@@ -1,18 +1,28 @@
+var webpack = require('webpack');
 module.exports = {
-  entry: './src/app.js',
+  devtool: "eval",
+  entry: [
+    "webpack-dev-server/client?http://localhost:3000",
+    "webpack/hot/only-dev-server",
+    "./src/app"
+  ],
   output: {
-    filename: 'bundle.js'       
+    path: __dirname + "/src",
+    filename: 'bundle.js',
+    publicPath: "/src/"
   },
-  devtool: "inline-source-map",
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       { test: /\.coffee$/, loader: 'coffee-loader' },
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
-      { test: /\.js$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
+      { test: /\.js$/, loader: 'react-hot!jsx-loader?harmony', exclude: /node_modules/ } 
     ]
   },
   resolve: {
-    // you can now require('file') instead of require('file.coffee')
     extensions: ['', '.js', '.json', '.coffee', '.less'] 
   }
 };

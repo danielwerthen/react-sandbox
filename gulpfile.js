@@ -1,11 +1,14 @@
 var gulp = require('gulp');
 var jest = require('jest-cli');
+var del = require('del');
 var jestConfig = require('./package.json').jest;
 
 
 gulp.task('test', [ 'transform' ],  function (done) {
   jest.runCLI({ config: jestConfig }, ".", function () {
-    done();
+    del([
+      jestConfig.rootDir
+    ], done);
   });
 });
 

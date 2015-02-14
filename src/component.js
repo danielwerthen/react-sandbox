@@ -5,7 +5,7 @@ var React = require('react');
 var Component = React.createClass({
   render: function () {
 
-    return <div>Hello world!</div>;
+    return <div>Hello world! it works live too</div>;
   }
 });
 

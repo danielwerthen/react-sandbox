@@ -1,14 +1,9 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var React = require('react'),
+    Html = require('./src/html');
+    Component = require('./src/component');
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true
-}).listen(3000, 'localhost', function (err, result) {
-  if (err) {
-    console.log(err);
-  }
-
-  console.log('Listening at localhost:3000');
-});
+module.exports = function (req, res, next) {
+  var markup = React.renderToString(<Component />);
+  var html = React.renderToStaticMarkup(<Html markup={markup} title="Workshop"/>);
+  res.send('<!DOCTYPE html>' + html);
+};

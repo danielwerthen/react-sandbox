@@ -1,3 +1,5 @@
+/** @jsx React.DOM */
+
 /* start-webpack-block */
 require('./less/style');
 /* end-webpack-block */
@@ -5,12 +7,5 @@ require('./less/style');
 var React = require('react'),
     Component = require('./component');
 
-var App = React.createClass({
-  render: function () {
-    return <div>
-      <Component />
-    </div>;
-  }
-});
 
-React.render(<App />, document.body);
+React.render(React.createElement(Component, null), document.body);

@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require('react'),
     Router = require('react-router'),
     Bootstrap = require('react-bootstrap'),
@@ -33,14 +34,19 @@ var Main = React.createClass({
     }
   },
   renderLoggedInUser: function () {
-    var user = this.state.user;
-    return user && ("Signed in as " + user.first_name);
+    var user = this.state.user,
+      me = user.get('me');
+    if (!me) {
+      return "Unknown";
+    }
+    return user && ("Signed in as " + me.first_name);
   },
   render: function () {
     return <div className="container">
       <header>
         <Navbar>
           <Nav >
+            <NavItem eventKey="lobby" href="#" onSelect={this.onSelect}>Lobby</NavItem>
             <NavItem eventKey="component" href="#" onSelect={this.onSelect}>Component</NavItem>
             <NavItem eventKey="/nowhere" href="#" onSelect={this.onSelect}>Nowhere</NavItem>
           </Nav>

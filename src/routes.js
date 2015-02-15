@@ -7,11 +7,13 @@ var Route = Router.Route,
 
 var Main = require('./components/main'),
     Component = require('./components/component'),
+    Lobby = require('./components/lobby'),
     NotFound = require('./components/not-found');
 
 var routes = (
     <Route name="app" path="/" handler={Main}>
-      <Route name="component" path="component" handler={Component} path="/component"/>
+      <Route name="lobby" path="lobby" handler={Lobby} />
+      <Route name="component" path="component" handler={Component} />
       <NotFoundRoute handler={NotFound} />
     </Route>
 );

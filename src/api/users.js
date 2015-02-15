@@ -1,4 +1,5 @@
-var Promise = require('promise');
+var Promise = require('promise'),
+    queries = require('./user-queries');
 (function (window) {
   var Parse = window.Parse || null;
 
@@ -23,7 +24,13 @@ if (Parse) {
             version    : 'v2.2' // point to the latest Facebook Graph API version
           });
           var usr = funcs.getCurrentFBUser();
-          res(usr);
+          if (usr && !usr.get('me')) {
+            res(funcs.graph.me().then(function (me) {
+              return funcs.updateUser(me);
+            }));
+          } else {
+            res(usr);
+          }
         };
 
         (function(d, s, id){
@@ -63,9 +70,16 @@ if (Parse) {
       });
       return prom;
     },
+    updateUser: function (me) {
+      var usr = Parse.User.current();
+      return usr.save({
+        me: me
+      });
+    },
     getParse: function () {
       return Parse;
     },
+    query: queries(Parse),
     graph: {
       me: function () {
         var promise = new Promise(function (resolve, reject) {

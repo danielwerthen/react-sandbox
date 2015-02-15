@@ -7,18 +7,27 @@ var userStore = Reflux.createStore({
     var self = this;
     users.initialize().then(function (usr) {
       self.loadUser(usr);
+      self.loadActiveUsers();
     });
     this.listenTo(actions.loginWithFacebook, this.loginWithFB);
   },
   getUser: function () {
     return this.user;
   },
+  getActiveUsers: function () {
+    return this.activeUsers;
+  },
+  loadActiveUsers: function () {
+    var self = this;
+    users.query.activeUsers().then(function (users) {
+      self.activeUsers = users;
+      self.trigger(users);
+    });
+  },
   loadUser: function (user) {
     var self = this;
-    users.graph.me().then(function (res) {
-      self.user = res;
-      self.trigger(res);
-    });
+    self.user = user;
+    self.trigger(user);
   },
   loginWithFB: function () {
     var self = this;

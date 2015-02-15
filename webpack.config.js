@@ -1,4 +1,11 @@
 var webpack = require('webpack');
+
+var definePlugin = new webpack.DefinePlugin({
+  __PARSE_KEY__: JSON.stringify(process.env.REACT_SANDBOX_KEY),
+  __FB_ID__: JSON.stringify(process.env.REACT_SANDBOX_FB_ID),
+  __PARSE_ID__: JSON.stringify(process.env.REACT_SANDBOX_ID)
+});
+
 module.exports = {
   devtool: "#inline-source-map",
   entry: [
@@ -13,7 +20,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    definePlugin
   ],
   module: {
     loaders: [

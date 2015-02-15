@@ -63,6 +63,9 @@ if (Parse) {
       });
       return prom;
     },
+    getParse: function () {
+      return Parse;
+    },
     graph: {
       me: function () {
         var promise = new Promise(function (resolve, reject) {

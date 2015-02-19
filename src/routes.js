@@ -11,7 +11,7 @@ var Main = require('./components/main'),
 
 var routes = (
     <Route name="app" path="/" handler={Main}>
-      <Route name="component" path="component" handler={Component} path="/component"/>
+      <Route name="component" path="component" handler={Component} />
       <NotFoundRoute handler={NotFound} />
     </Route>
 );
